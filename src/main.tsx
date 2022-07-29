@@ -10,12 +10,13 @@ import ReactDOM from "react-dom/client";
 // import { FocusScreen } from "./04-useRef/FocusScreen";
 // import { Memorize } from "./05-memo/Memorize";
 // import { MemoHook } from "./06-useMemo/MemoHook";
-import { Padre } from "./07-tarea-memo/Padre";
+// import { Padre } from "./07-tarea-memo/Padre";
+import { TodoApp } from "./08-useReducer/TodoApp";
 
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <Padre />
+    <TodoApp />
   </React.StrictMode>
 );
