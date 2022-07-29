@@ -11,7 +11,6 @@ export enum TodoActionKind {
   DELETE = "DELETE",
 }
 
-export interface TodoAction {
-  type: TodoActionKind;
-  payload?: number | string | boolean;
-}
+export type TodoAction =
+  | { type: TodoActionKind.DELETE }
+  | { type: TodoActionKind.ADD; payload: Todo };

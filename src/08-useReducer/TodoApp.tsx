@@ -4,7 +4,7 @@ import { TodoList } from "./TodoList";
 import { TodoAdd } from "./TodoAdd";
 
 import { todoReducer } from "./todoReducer";
-import { Todo } from "./interfaces/Todo.interface";
+import { Todo, TodoAction, TodoActionKind } from "./interfaces/Todo.interface";
 
 const initialState: Todo[] = [
   {
@@ -23,7 +23,12 @@ export const TodoApp: React.FC = () => {
   const [todos, dispatchTodo] = useReducer(todoReducer, initialState);
 
   const onNewTodo = (todo: Todo) => {
-    console.log(todo);
+    const action: TodoAction = {
+      type: TodoActionKind.ADD,
+      payload: todo,
+    };
+
+    dispatchTodo(action);
   };
 
   return (
