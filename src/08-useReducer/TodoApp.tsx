@@ -1,5 +1,8 @@
 import React, { useReducer } from "react";
 
+import { TodoList } from "./TodoList";
+import { TodoAdd } from "./TodoAdd";
+
 import { todoReducer } from "./todoReducer";
 import { Todo } from "./interfaces/Todo.interface";
 
@@ -19,21 +22,32 @@ const initialState: Todo[] = [
 export const TodoApp: React.FC = () => {
   const [todos, dispatchTodo] = useReducer(todoReducer, initialState);
 
-  console.log(todos);
+  const onNewTodo = (todo: Todo) => {
+    console.log(todo);
+  };
 
   return (
     <section className="TodoApp">
       <div className="container mt-4">
         <div className="row">
           <div className="col">
-            <h1>TodoApp</h1>
+            <h1>
+              TodoApp {10}, <small>pendientes: 2</small>
+            </h1>
             <hr />
 
-            <ul>
-              <li>Item 1</li>
-              <li>Item 2</li>
-              <li>Item 3</li>
-            </ul>
+            <div className="row">
+              <div className="col-7">
+                <TodoList todos={todos} />
+              </div>
+
+              <div className="col-5">
+                <h4>Agregar TODO</h4>
+                <hr />
+
+                <TodoAdd addTodo={onNewTodo} />
+              </div>
+            </div>
           </div>
         </div>
       </div>

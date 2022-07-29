@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import { SimpleForm } from "../interfaces/SimpleForm.interface";
 
+// test.
+
 export const useForm = (initialState: SimpleForm) => {
   const [stateForm, setStateForm] = useState<SimpleForm>(initialState);
 
