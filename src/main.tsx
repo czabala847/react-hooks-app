@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 
 // import { HooksApp } from "./HooksApp";
 // import { CounterApp } from "./01-useState/CounterApp";
@@ -11,12 +12,15 @@ import ReactDOM from "react-dom/client";
 // import { Memorize } from "./05-memo/Memorize";
 // import { MemoHook } from "./06-useMemo/MemoHook";
 // import { Padre } from "./07-tarea-memo/Padre";
-import { TodoApp } from "./08-useReducer/TodoApp";
+// import { TodoApp } from "./08-useReducer/TodoApp";
+import { MainApp } from "./09.useContext/MainApp";
 
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
-    <TodoApp />
-  </React.StrictMode>
+  <BrowserRouter>
+    <React.StrictMode>
+      <MainApp />
+    </React.StrictMode>
+  </BrowserRouter>
 );
