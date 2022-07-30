@@ -9,8 +9,10 @@ export interface Todo {
 export enum TodoActionKind {
   ADD = "ADD",
   DELETE = "DELETE",
+  TOGGLE = "TOGGLE",
 }
 
 export type TodoAction =
-  | { type: TodoActionKind.DELETE, payload: number }
+  | { type: TodoActionKind.TOGGLE; payload: number }
+  | { type: TodoActionKind.DELETE; payload: number }
   | { type: TodoActionKind.ADD; payload: Todo };
