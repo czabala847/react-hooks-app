@@ -12,5 +12,5 @@ export enum TodoActionKind {
 }
 
 export type TodoAction =
-  | { type: TodoActionKind.DELETE }
+  | { type: TodoActionKind.DELETE, payload: number }
   | { type: TodoActionKind.ADD; payload: Todo };

@@ -1,8 +1,6 @@
 import React, { ChangeEvent, useState } from "react";
 import { Todo } from "./interfaces/Todo.interface";
 
-import { useForm } from "../hooks/useForm";
-
 interface Props {
   addTodo: (todo: Todo) => void;
 }
